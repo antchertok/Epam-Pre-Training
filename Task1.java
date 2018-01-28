@@ -1,5 +1,4 @@
 public class Task1 {
-    
     //    1 Граммы в тонны
     static double getTons(long grams) {
         return grams / 1_000_000;
