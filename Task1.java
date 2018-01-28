@@ -63,7 +63,7 @@ public class Task1 {
         return average;
     }
 
-    //    6.2 Некрасиво
+    //    6.2
     static double calcGeomAverage(int n) {
         double average;
         int mult = 1;
@@ -79,8 +79,7 @@ public class Task1 {
     static int reverse(int n) {
         int reversed = 0;
         for (int i = 0; i < 7; i++) {
-            reversed *= 10;
-            reversed += n % 10;
+            reversed = reversed * 10 + n % 10;
             n /= 10;
         }
         return reversed;
