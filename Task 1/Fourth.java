@@ -1,4 +1,5 @@
 public class Fourth {
+    
     static boolean isIncreasingSequence(int n) {
         int digit;
         boolean isIncreasing = true;
