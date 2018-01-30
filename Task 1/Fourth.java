@@ -14,6 +14,7 @@ public class Fourth {
         digit = n % 10;
         n /= 10;
         isIncreasing = (digit <= (n % 10) || !isIncreasing) ? false : true;
+        
         return isIncreasing;
     }
 }
