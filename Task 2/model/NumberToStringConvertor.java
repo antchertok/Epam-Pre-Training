@@ -19,6 +19,7 @@ public class NumberToStringConvertor {
         } else {
             numberAsString.append(getStringForUnits(number));
         }
+        
         return numberAsString.toString();
     }
 
@@ -87,8 +88,10 @@ public class NumberToStringConvertor {
                 numberAsString.append(" ninety");
                 break;
         }
+        
         number %= 10;
         numberAsString.append(getStringForUnits(number));
+        
         return numberAsString.toString();
     }
 
