@@ -50,7 +50,6 @@ public class NumberToStringConvertor {
     }
 
     private static String getStringForTens(int number) {
-        StringBuilder numberAsString = new StringBuilder();
 
         if (number / 10 != 1) {
             return getStringForHigherTens(number);
