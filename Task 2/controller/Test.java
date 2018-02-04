@@ -19,8 +19,8 @@ public class Test {
                 + " years old.");
         View.print("The next day after " + day + "." + month + "." + year
                 + " is " + DaySwitch.nextDay(day, month, year));
-        View.print("The letter " + letter +" is "
-                + (VowelsDetector.isVowelSwitch(letter) ? "vowel" : "consonant"));
+        View.print("The letter " + letter + " is vowel: " 
+                + VowelsDetector.isVowelSwitch(letter));
         MoodDetector.detectMood();
 
     }
