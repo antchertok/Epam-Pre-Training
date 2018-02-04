@@ -7,7 +7,6 @@ public class DaySwitch {
     private static final int DAYS_PER_FEB_IN_LEAP_YEAR = 29;
     private static final int FIRST = 1;
 
-
     public static String nextDay(int day, int month, int year) {
 
         switch (month) {
@@ -34,7 +33,6 @@ public class DaySwitch {
                 } else {
                     month = (day != DAYS_PER_FEB_IN_LEAP_YEAR) ? month : ++month;
                     day = (day != DAYS_PER_FEB_IN_LEAP_YEAR) ? ++day : FIRST;
-
                 }
                 break;
             case 12:
