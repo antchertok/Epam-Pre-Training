@@ -40,6 +40,8 @@ public class DaySwitch {
                 year = (day != THIRTY_ONE_DAYS) ? year : ++year;
                 day = (day != THIRTY_ONE_DAYS) ? ++day : FIRST;
                 break;
+            default:
+                return "INCORRECT INPUT";    
         }
 
         return day + "." + month + "." + year;
