@@ -22,7 +22,7 @@ public class DragonAnalyzer {
                 heads += YEARS_OF_MID_AGE * HEADS_PER_YEAR_IN_MID_AGE;
                 heads += (age - YEARS_OF_MID_AGE) * HEADS_PER_YEAR_IN_OLD_AGE;
             } else {
-                heads += (age * HEADS_PER_YEAR_IN_MID_AGE);
+                heads += age * HEADS_PER_YEAR_IN_MID_AGE;
             }
         } else {
             heads += age * HEADS_PER_YEAR_IN_YOUTH;
