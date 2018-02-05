@@ -1,51 +1,39 @@
 package second.model;
 
-import second.view.View;
+import java.util.Random;
 
 public class MoodDetector {
-    private static final double UPPER_LIMIT_OF_SAD_LEVEL = 0.33;
-    private static final double LOWER_LIMIT_OF_HAPPY_LEVEL = 0.67;
+    private static final String SURRENDER = "It's too hard to describe your mood";
+    private static final String ERROR_MSG = "Incorrect input";
+    private static final String CRYING_FACE = "T_T";
+    private static final String HAPPY_FACE = "^_^";
+    private static final String INDIFFERENT_FACE = "-_-";
+    private static Random moodGuesser = new Random();
 
-    public static void detectMood() {
-        double moodLevel = Math.random();
+//    Надо ли указывать непроверяемое исключение?
+    public static String detectMood(int amountOfMoods) throws RuntimeException{
 
-        if (isSad(moodLevel)) {
-            FacePrinter.printSadFace();
-        } else if (isHappy(moodLevel)) {
-            FacePrinter.printHappyFace();
-        } else {
-            FacePrinter.printIndifferentFace();
+        if (amountOfMoods <= 0) {
+            throw new RuntimeException(ERROR_MSG);
         }
-    }
 
-    private static boolean isSad(double moodLevel) {
-        return moodLevel <= UPPER_LIMIT_OF_SAD_LEVEL;
-    }
+        int moodLevel = moodGuesser.nextInt(amountOfMoods);
+        String mood;
 
-    private static boolean isHappy(double moodLevel) {
-        return moodLevel >= LOWER_LIMIT_OF_HAPPY_LEVEL;
-    }
-}
+        switch (moodLevel) {
+            case 0:
+                mood = CRYING_FACE;
+                break;
+            case 1:
+                mood = HAPPY_FACE;
+                break;
+            case 2:
+                mood = INDIFFERENT_FACE;
+                break;
+            default:
+                mood = SURRENDER;
+        }
 
-class FacePrinter {
-    static void printHappyFace() {
-        View.print("  XXXXXX");
-        View.print(" X o  o X");
-        View.print(" X°....°X");
-        View.print("  XXXXXX");
-    }
-
-    static void printIndifferentFace() {
-        View.print("  XXXXXX");
-        View.print(" X o  o X");
-        View.print(" X .... X");
-        View.print("  XXXXXX");
-    }
-
-    static void printSadFace() {
-        View.print("  XXXXXX");
-        View.print(" X o  o X");
-        View.print(" X.°°°°.X");
-        View.print("  XXXXXX");
+        return mood;
     }
 }
