@@ -1,6 +1,6 @@
 package third.model;
 
-public class PrimeNumberIndicator {
+public class PrimeNumIndicator {
     private static final int MIN_PRIME_NUMBER = 2;
 
     public static boolean isPrime(int number) {
