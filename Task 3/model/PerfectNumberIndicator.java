@@ -3,6 +3,11 @@ package third.model;
 public class PerfectNumberIndicator {
 
     public static boolean isPerfect(int number) {
+        number = number > 0 ? number : -number;
+        return number == calcSumOfDigits(number);
+    }
+
+    private static int calcSumOfDigits(int number) {
         int sum = 0;
 
         for (int divisor = 1; divisor < number; divisor++) {
@@ -10,6 +15,7 @@ public class PerfectNumberIndicator {
                 sum += divisor;
             }
         }
-        return sum == number;
+
+        return sum;
     }
 }
