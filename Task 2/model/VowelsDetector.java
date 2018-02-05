@@ -15,27 +15,22 @@ public class VowelsDetector {
                 return false;
         }
     }
-
+    
+    //Заменить на единичный if
     public static boolean isVowelIfElse(String letter) {
+        boolean isVowel = false;
         letter = letter.toUpperCase();
 
-        if (letter.equals("A")) {
-            return true;
-        } else if (letter.equals("E")) {
-            return true;
-        } else if (letter.equals("I")) {
-            return true;
-        } else if (letter.equals("O")) {
-            return true;
-        } else if (letter.equals("U")) {
-            return true;
-        } else if (letter.equals("Y")) {
-            return true;
-        } else {
-            return false;
-        }
+        if (letter.equals("A") || letter.equals("E")
+                || letter.equals("I") || letter.equals("O")
+                || letter.equals("U") || letter.equals("Y")) {
+            isVowel = true;
+        } 
+        return isVowel;
+      
     }
 
+    //УБРАТЬ
     public static boolean isVowelConditionalOperator(String letter) {
         letter = letter.toUpperCase();
 
