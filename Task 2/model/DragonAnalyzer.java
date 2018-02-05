@@ -14,7 +14,8 @@ public class DragonAnalyzer {
         int heads = HEADS_PER_YEAR_IN_YOUTH;
 
         if (age >= OLD_AGE) {
-            heads += age - OLD_AGE;
+            heads += age * HEADS_PER_YEAR_IN_OLD_AGE
+                    - OLD_AGE * HEADS_PER_YEAR_IN_OLD_AGE;
             age = OLD_AGE;
         }
         if (age >= YOUTH) {
