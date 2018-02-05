@@ -1,6 +1,7 @@
 package second.model;
 
 public class VowelsDetector {
+    private static final String VOWELS = "AEIOUY";
 
     public static boolean isVowelSwitch(String letter) {
         switch (letter.toUpperCase()) {
@@ -15,32 +16,17 @@ public class VowelsDetector {
                 return false;
         }
     }
-    
-    //Заменить на единичный if
+
     public static boolean isVowelIfElse(String letter) {
         boolean isVowel = false;
         letter = letter.toUpperCase();
 
-        if (letter.equals("A") || letter.equals("E")
+        if ((letter.equals("A") || letter.equals("E")
                 || letter.equals("I") || letter.equals("O")
-                || letter.equals("U") || letter.equals("Y")) {
+                || letter.equals("U") || letter.equals("Y"))) {
             isVowel = true;
-        } 
-        return isVowel;
-      
-    }
-
-    //УБРАТЬ
-    public static boolean isVowelConditionalOperator(String letter) {
-        letter = letter.toUpperCase();
-
-        boolean isVowel = letter.equals("A");
-        isVowel = (letter.equals("E") || isVowel) ? true : false;
-        isVowel = (letter.equals("I") || isVowel) ? true : false;
-        isVowel = (letter.equals("O") || isVowel) ? true : false;
-        isVowel = (letter.equals("U") || isVowel) ? true : false;
-        isVowel = (letter.equals("Y") || isVowel) ? true : false;
-
+        }
+        
         return isVowel;
     }
 
@@ -52,7 +38,7 @@ public class VowelsDetector {
     }
 
     public static boolean isVowelString(String letter) {
-        return "AEIOUY".contains(letter.toUpperCase());
+        return VOWELS.contains(letter.toUpperCase());
     }
 
 }
