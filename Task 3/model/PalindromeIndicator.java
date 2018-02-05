@@ -10,9 +10,10 @@ public class PalindromeIndicator {
     private static int reverse(int number){
         int reversed = 0;
 
-        for (int n = number; n > 0; n /= 10) {
-            reversed = reversed * 10 + n % 10;
+        for (; number > 0; number /= 10) {
+            reversed = reversed * 10 + number % 10;
         }
+        
         return reversed;
     }
 }
