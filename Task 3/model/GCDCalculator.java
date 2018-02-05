@@ -2,10 +2,15 @@ package third.model;
 
 public class GCDCalculator {
 
-    public static int calcGCD(int a, int b) {
+    //    Надо ли указывать непроверяемые исключения через throws?
+    public static int calcGCD(int a, int b) throws RuntimeException {
+
+        if (a * b == 0) {
+            throw new RuntimeException("At least one number is zero");
+        }
+
         a = a > 0 ? a : -a;
         b = b > 0 ? b : -b;
-        a = a > b ? a : a + b - (b = a);
         int remainder;
 
         while (a % b != 0) {
@@ -16,4 +21,23 @@ public class GCDCalculator {
 
         return b;
     }
+    
+     //    Вариант 2
+    public static int calcGreatestCommonDivisor(int a, int b)
+            throws RuntimeException {
+
+        if (a * b == 0) {
+            throw new RuntimeException("At least one number is zero");
+        }
+
+        a = a > 0 ? a : -a;
+        b = b > 0 ? b : -b;
+
+        for (int remainder; a % b != 0; a = b, b = remainder) {
+            remainder = a % b;
+        }
+
+        return b;
+    }
 }
+
