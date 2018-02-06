@@ -10,20 +10,22 @@ public class DigitCounter {
         number = number > 0 ? number : -number;
         int amountOfDigits = 0;
 
-        for (; number > 0; number /= 10) {
+        while (number > 0) {
             if (!contains(number / 10, number % 10)) {
                 amountOfDigits++;
             }
+            number /= 10
         }
 
         return amountOfDigits;
     }
 
     private static boolean contains(int number, int digit) {
-        for (; number > 0; number /= 10) {
+        while (number > 0) {
             if (digit == number % 10) {
                 return true;
             }
+            number /= 10
         }
         return false;
     }
