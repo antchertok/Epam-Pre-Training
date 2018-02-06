@@ -1,30 +1,30 @@
 package third.model;
 
-import java.util.HashSet;
-
 public class DigitCounter {
 
-    //Если нельзя с коллекцией
     public static int howManyDigits(int number) {
-        String digitStorage = "";
+        number = number > 0 ? number : -number;
+        int amountOfDigits = 0;
+
+        if (number == 0) {
+            return 1;
+        }
 
         for (; number > 0; number /= 10) {
-            if (!digitStorage.contains(Integer.toString(number % 10))) {
-                digitStorage += number % 10;
+            if (!isConsist(number % 10, number / 10)) {
+                amountOfDigits++;
             }
         }
 
-        return digitStorage.length();
+        return amountOfDigits;
     }
 
-    //Если можно
-    public static int howManyFigures(int number) {
-        HashSet<Integer> digitStorage = new HashSet();
-
+    private static boolean isConsist(int digit, int number) {
         for (; number > 0; number /= 10) {
-            digitStorage.add(number % 10);
+            if (digit == number % 10) {
+                return true;
+            }
         }
-
-        return digitStorage.size();
+        return false;
     }
 }
