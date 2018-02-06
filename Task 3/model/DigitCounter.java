@@ -10,7 +10,7 @@ public class DigitCounter {
         number = number > 0 ? number : -number;
         int amountOfDigits = 0;
 
-        for (; number > 1; number /= 10) {
+        for (; number > 0; number /= 10) {
             if (!contains(number / 10, number % 10)) {
                 amountOfDigits++;
             }
