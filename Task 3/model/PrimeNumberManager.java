@@ -20,14 +20,11 @@ public class PrimeNumberManager {
         number = number > 0 ? number : -number;
         boolean isPrime = number < 2 ? false : true;
 
-        int divisor = MIN_PRIME_NUMBER;
-        while (divisor < number && isPrime) {
+        for (int divisor = MIN_PRIME_NUMBER; divisor < number; divisor++) {
             if (number % divisor == 0) {
-                isPrime = false;
+                isPrime =  false;
             }
-            divisor++;
         }
-
         return isPrime;
     }
 }
