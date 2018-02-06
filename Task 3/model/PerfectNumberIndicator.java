@@ -3,12 +3,11 @@ package third.model;
 public class PerfectNumberIndicator {
 
     public static boolean isPerfect(int number) {
-        number = number > 0 ? number : -number;
-
         if(number == 0){
             return false;
         }
 
+        number = number > 0 ? number : -number;
         return number == calcSumOfDivisors(number);
     }
 
