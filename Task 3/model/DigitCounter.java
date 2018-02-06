@@ -14,7 +14,7 @@ public class DigitCounter {
             if (!contains(number / 10, number % 10)) {
                 amountOfDigits++;
             }
-            number /= 10
+            number /= 10;
         }
 
         return amountOfDigits;
@@ -25,7 +25,7 @@ public class DigitCounter {
             if (digit == number % 10) {
                 return true;
             }
-            number /= 10
+            number /= 10;
         }
         return false;
     }
