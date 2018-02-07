@@ -11,10 +11,10 @@ public class MoodDetector {
     private static Random moodGuesser = new Random();
 
 //    Надо ли указывать непроверяемое исключение?
-    public static String detectMood(int amountOfMoods) throws RuntimeException{
+    public static String detectMood(int amountOfMoods) {
 
         if (amountOfMoods <= 0) {
-            throw new RuntimeException(ERROR_MSG);
+            throw new RuntimeException(ERROR_MSG);//УБРАТЬ
         }
 
         int moodLevel = moodGuesser.nextInt(amountOfMoods);
