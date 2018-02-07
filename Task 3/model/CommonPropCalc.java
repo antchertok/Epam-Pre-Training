@@ -2,31 +2,34 @@ package third.model;
 
 public class CommonPropCalc {
 
-    public static int calcGCD(int firstInt, int secondInt) {
+    public static int calcGCD(int firstNumber, int secondNumber)
+            throws ZeroDetectedException {
 
-        if (firstInt * secondInt == 0) {
-            throw new RuntimeException("At least one number is zero");//УБРАТЬ
+        if (firstNumber * secondNumber == 0) {
+            throw new ZeroDetectedException();
         }
 
-        firstInt = firstInt > 0 ? firstInt : -firstInt;
-        secondInt = secondInt > 0 ? secondInt : -secondInt;
+        firstNumber = firstNumber > 0 ? firstNumber : -firstNumber;
+        secondNumber = secondNumber > 0 ? secondNumber : -secondNumber;
         int remainder;
 
-        while (firstInt % secondInt != 0) {
-            remainder = firstInt % secondInt;
-            firstInt = secondInt;
-            secondInt = remainder;
+        while (firstNumber % secondNumber != 0) {
+            remainder = firstNumber % secondNumber;
+            firstNumber = secondNumber;
+            secondNumber = remainder;
         }
 
-        return secondInt;
+        return secondNumber;
     }
 
-    public static int calcLCM(int firstInt, int secondInt) {
+    public static int calcLCM(int firstNumber, int secondNumber)
+            throws ZeroDetectedException {
 
-        if (firstInt * secondInt == 0) {
-            throw new RuntimeException("At least one number is zero");//УБРАТЬ
+        if (firstNumber * secondNumber == 0) {
+            throw new ZeroDetectedException();
         }
 
-        return Math.abs(firstInt * secondInt) / calcGCD(firstInt, secondInt);
+        return Math.abs(firstNumber * secondNumber)
+                / calcGCD(firstNumber, secondNumber);
     }
 }
