@@ -9,6 +9,7 @@ public class Test {
         int day = 31;
         int month = 12;
         int year = 2000;
+        int amountOfMoods = 10;
         String letter = "A";
 
         View.print("The dragon has "
