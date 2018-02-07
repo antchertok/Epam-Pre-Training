@@ -12,7 +12,7 @@ public class DaySwitch {
     public static String nextDay(int day, int month, int year) {
 
         if (!isValidDate(day, month, year)) {
-            throw new RuntimeException("Incorrect input");
+            throw new RuntimeException("Incorrect input");// УБРАТЬ
         }
 
         if (month == 4 || month == 6 || month == 9 || month == 11) {
