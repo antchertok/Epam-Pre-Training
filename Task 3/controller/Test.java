@@ -24,11 +24,11 @@ public class Test {
         View.print("Prime divisors of " + number + ": "
                 + PrimeNumberManager.getPrimeDivisors(number));
 
-        View.print("The greatest common divisor of " + tosses + " and " + perfTest
-                + ": " + CommonPropCalc.calcGCD(tosses, perfTest));
+       View.print("The greatest common divisor of " + tosses + " and " + perfTest
+                + ": " + CommonPropCalcRunner.calcGCD(tosses, perfTest));
 
         View.print("The least common multiple of " + tosses + " and " + perfTest
-                + ": " + CommonPropCalc.calcLCM(tosses, perfTest));
+                + ": " + CommonPropCalcRunner.calcLCM(tosses, perfTest));
 
         View.print(number + " contains "
                 + DigitCounter.howManyDigits(number) + " digits");
