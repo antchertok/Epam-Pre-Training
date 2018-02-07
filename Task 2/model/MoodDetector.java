@@ -3,18 +3,18 @@ package second.model;
 import java.util.Random;
 
 public class MoodDetector {
-    private static final String SURRENDER = "It's too hard to describe your mood";
-    private static final String ERROR_MSG = "Incorrect input";
     private static final String CRYING_FACE = "T_T";
     private static final String HAPPY_FACE = "^_^";
     private static final String INDIFFERENT_FACE = "-_-";
+    private static final int POSSIBLE_MOODS = 3;
     private static Random moodGuesser = new Random();
 
-//    Надо ли указывать непроверяемое исключение?
-    public static String detectMood(int amountOfMoods) {
+    public static String detectMood(int amountOfMoods)
+            throws UnsupportedAmountOfMoodsException {
+        amountOfMoods = amountOfMoods < 0 ? -amountOfMoods : amountOfMoods;
 
-        if (amountOfMoods <= 0) {
-            throw new RuntimeException(ERROR_MSG);//УБРАТЬ
+        if (amountOfMoods > POSSIBLE_MOODS) {
+            throw new UnsupportedAmountOfMoodsException();
         }
 
         int moodLevel = moodGuesser.nextInt(amountOfMoods);
@@ -27,13 +27,13 @@ public class MoodDetector {
             case 1:
                 mood = HAPPY_FACE;
                 break;
-            case 2:
+            default:
                 mood = INDIFFERENT_FACE;
                 break;
-            default:
-                mood = SURRENDER;
         }
 
         return mood;
     }
 }
+
+
