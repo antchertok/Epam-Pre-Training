@@ -17,8 +17,7 @@ public class Test {
         View.print("It's "
                 + NumberToStringConvertor.convertNumberToString(ageOfDragon)
                 + " years old.");
-        View.print("The next day after " + day + "." + month + "." + year
-                + " is " + DaySwitch.nextDay(day, month, year));
+        View.print("Next day: " + DaySwitchRunner.nextDay(day, month, year));
         View.print("The letter " + letter + " is vowel: " 
                 + VowelsDetector.isVowelSwitch(letter));
         MoodDetector.detectMood();
