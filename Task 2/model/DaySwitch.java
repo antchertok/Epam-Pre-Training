@@ -9,13 +9,18 @@ public class DaySwitch {
     private static final int PERIOD_BETWEEN_LEAP_YEARS = 4;
 
 
-    public static String nextDay(int day, int month, int year) {
+    public static String nextDay(int day, int month, int year)
+            throws InvalidDateException {
 
         if (!isValidDate(day, month, year)) {
-            throw new RuntimeException("Incorrect input");// УБРАТЬ
+            throw new InvalidDateException();
         }
 
-        if (month == 4 || month == 6 || month == 9 || month == 11) {
+        if (month == 1 || month == 3 || month == 5
+                || month == 7 || month == 8 || month == 10) {
+            month = (day != THIRTY_ONE_DAYS) ? month : ++month;
+            day = (day != THIRTY_ONE_DAYS) ? ++day : FIRST;
+        } else if (month == 4 || month == 6 || month == 9 || month == 11) {
             month = (day != THIRTY_DAYS) ? month : ++month;
             day = (day != THIRTY_DAYS) ? ++day : FIRST;
         } else if (month == 2) {
@@ -26,14 +31,10 @@ public class DaySwitch {
                 month = (day != DAYS_PER_FEB_IN_LEAP_YEAR) ? month : ++month;
                 day = (day != DAYS_PER_FEB_IN_LEAP_YEAR) ? ++day : FIRST;
             }
-        } else if (month == 12) {
+        } else {
             month = (day != THIRTY_ONE_DAYS) ? month : FIRST;
             year = (day != THIRTY_ONE_DAYS) ? year : ++year;
             day = (day != THIRTY_ONE_DAYS) ? ++day : FIRST;
-        } else {
-            month = (day != THIRTY_ONE_DAYS) ? month : ++month;
-            day = (day != THIRTY_ONE_DAYS) ? ++day : FIRST;
-
         }
         return day + "." + month + "." + year;
     }
@@ -58,7 +59,7 @@ public class DaySwitch {
             isValid = false;
         }
 
-        if(isValid){
+        if (isValid) {
             if (month == 1 || month == 3 || month == 5 || month == 7
                     || month == 8 || month == 10 || month == 12) {
                 if (day > 31) {
@@ -74,9 +75,7 @@ public class DaySwitch {
                 isValid = false;
             }
         }
-        
+
         return isValid;
     }
 }
-
-
