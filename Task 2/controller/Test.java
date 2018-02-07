@@ -20,7 +20,7 @@ public class Test {
         View.print("Next day: " + DaySwitchRunner.nextDay(day, month, year));
         View.print("The letter " + letter + " is vowel: " 
                 + VowelsDetector.isVowelSwitch(letter));
-        MoodDetector.detectMood();
+        View.print(MoodDetectorRunner.detectMood(amountOfMoods));
 
     }
 }
