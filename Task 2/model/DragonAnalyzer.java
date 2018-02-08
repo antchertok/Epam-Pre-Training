@@ -14,16 +14,18 @@ public class DragonAnalyzer {
         int heads = HEADS_PER_YEAR_IN_YOUTH;
 
         if (age >= OLD_AGE) {
-            heads += age * HEADS_PER_YEAR_IN_OLD_AGE
-                    - OLD_AGE * HEADS_PER_YEAR_IN_OLD_AGE;
-            age = OLD_AGE;
+            heads = heads + age * HEADS_PER_YEAR_IN_OLD_AGE
+                    - OLD_AGE * HEADS_PER_YEAR_IN_OLD_AGE
+                    + OLD_AGE * HEADS_PER_YEAR_IN_MID_AGE
+                    - YOUTH * HEADS_PER_YEAR_IN_MID_AGE
+                    + YOUTH * HEADS_PER_YEAR_IN_YOUTH;
+        } else if (age >= YOUTH) {
+            heads  = heads + age * HEADS_PER_YEAR_IN_MID_AGE
+                    - YOUTH * HEADS_PER_YEAR_IN_MID_AGE
+                    + YOUTH * HEADS_PER_YEAR_IN_YOUTH;
+        } else {
+            heads = heads + age * HEADS_PER_YEAR_IN_YOUTH;
         }
-        if (age >= YOUTH) {
-            heads += age * HEADS_PER_YEAR_IN_MID_AGE
-                    - YOUTH * HEADS_PER_YEAR_IN_MID_AGE;
-            age = YOUTH;
-        }
-        heads += age * HEADS_PER_YEAR_IN_YOUTH;
         return heads;
     }
 
