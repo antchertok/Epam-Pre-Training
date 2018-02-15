@@ -2,19 +2,17 @@ package third.model;
 
 public class PalindromeIndicator {
 
-    public static boolean isPalindrome(int number) {
+    public static boolean indicatePalindrome(int number) {
         number = number > 0 ? number : -number;
-
-        return number == reverse(number);
-    }
-
-    private static int reverse(int number){
         int reversed = 0;
+        int bunchOfDigits = number;
 
-        while (number > 0) {
-            reversed = reversed * 10 + number % 10;
-            number /= 10;
+        while (bunchOfDigits > 0) {
+            reversed = reversed * 10 + bunchOfDigits % 10;
+            bunchOfDigits /= 10;
         }
-        return reversed;
+
+        return number == reversed;
     }
+
 }
