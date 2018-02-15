@@ -6,6 +6,7 @@ public class DigitsCalc {
         number = number < 0 ? -number : number;
         return calcSumOfDigits(number);
     }
+    
     public static int calcSumOfDigits(int number) {
         return number < 10 ? number : number % 10 + calcSumOfDigits(number / 10);
     }
@@ -19,6 +20,5 @@ public class DigitsCalc {
 
         return sum;
     }
-
 
 }
