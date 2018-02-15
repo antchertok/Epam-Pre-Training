@@ -1,14 +1,14 @@
 package third.model;
 
 public class PrimeNumberManager {
-    private static final int MIN_PRIME_NUMBER = 2;
 
-    public static String getPrimeDivisors(int number) {
+    public static String findPrimeDivisors(int number) {
         number = number > 0 ? number : -number;
+        int upperLimit = number / 2;
         StringBuilder primeDivisors = new StringBuilder();
 
-        for (int divisor = MIN_PRIME_NUMBER; divisor < number; divisor++) {
-            if (number % divisor == 0 && isPrime(divisor)) {
+        for (int divisor = 2; divisor <= upperLimit; divisor++) {
+            if (number % divisor == 0 && indicatePrime(divisor)) {
                 primeDivisors.append(divisor);
                 primeDivisors.append(' ');
             }
@@ -16,11 +16,12 @@ public class PrimeNumberManager {
         return primeDivisors.toString();
     }
 
-    public static boolean isPrime(int number) {
+    public static boolean indicatePrime(int number) {
         number = number > 0 ? number : -number;
+        int upperLimit = number / 2;
         boolean isPrime = number < 2 ? false : true;
 
-        for (int divisor = MIN_PRIME_NUMBER; divisor < number; divisor++) {
+        for (int divisor = 2; divisor <= upperLimit; divisor++) {
             if (number % divisor == 0) {
                 isPrime =  false;
             }
