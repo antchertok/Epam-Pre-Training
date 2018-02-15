@@ -12,6 +12,7 @@ public class DigitsCalc {
     }
 
     public static int calcSumOfDigitsIterative(int number) {
+        number = number < 0 ? -number : number;
         int sum = 0;
 
         for (; number > 0; number /= 10) {
