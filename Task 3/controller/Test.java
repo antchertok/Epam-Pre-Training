@@ -13,16 +13,16 @@ public class Test {
         View.print(HeadsOrTails.howManyHeads(tosses) + " heads");
 
         View.print("The largest digit in " + number + ": "
-                + MaxDigitDetector.getMaxDigit(number));
+                + MaxDigitDetector.detectMaxDigit(number));
 
         View.print(number + " is a palindrome: "
-                + PalindromeIndicator.isPalindrome(number));
+                + PalindromeIndicator.indicatePalindrome(number));
 
         View.print(number + " is prime: "
-                + PrimeNumberManager.isPrime(number));
+                + PrimeNumberManager.indicatePrime(number));
 
         View.print("Prime divisors of " + number + ": "
-                + PrimeNumberManager.getPrimeDivisors(number));
+                + PrimeNumberManager.findPrimeDivisors(number));
 
        View.print("The greatest common divisor of " + tosses + " and " + perfTest
                 + ": " + CommonPropCalcRunner.calcGCD(tosses, perfTest));
@@ -34,7 +34,7 @@ public class Test {
                 + DigitCounter.howManyDigits(number) + " digits");
 
         View.print(perfTest + " is perfect: "
-                + PerfectNumberIndicator.isPerfect(perfTest));
+                + PerfectNumberIndicator.indicatePerfect(perfTest));
 
     }
 
