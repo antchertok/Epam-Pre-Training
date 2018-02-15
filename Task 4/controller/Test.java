@@ -22,9 +22,8 @@ public class Test {
         View.print(FibonacciNumberDetector.calcFibNumberIterative(9));
         View.print("");
 
-        View.print(TowerOfHanoi.solvePuzzle(2, 'A', 'B', 'C'));
+        View.print(TowerOfHanoi.solve(2, 'A', 'B', 'C'));
         View.print("");
-        View.print(TowerOfHanoi.solvePuzzle(2, 'A', 'B', 'C'));
-
+     
     }
 }
