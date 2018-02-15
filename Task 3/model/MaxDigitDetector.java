@@ -2,7 +2,7 @@ package third.model;
 
 public class MaxDigitDetector {
 
-    public static int getMaxDigit(int number) {
+    public static int detectMaxDigit(int number) {
         number = number > 0 ? number : -number;
         int max = 0;
 
