@@ -25,5 +25,4 @@ public class TowerOfHanoi {
         return step;
     }
 
-//    Итерационную версию сделать не успел. Простите :(
 }
