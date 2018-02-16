@@ -9,12 +9,8 @@ public class EqualityIndicator {
     }
 
     public static boolean findEquality(int number, int possibleSum) {
-        if (number >= 10) {
-            return findEquality(number / 10, possibleSum - number % 10);
-        } else {
-            return number == possibleSum;
-        }
-
+        return number >= 10 ? findEquality(number / 10, possibleSum - number % 10)
+                            : number == possibleSum;
     }
 
     public static boolean findEqualityIterative(int number, int possibleSum) {
