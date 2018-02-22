@@ -76,8 +76,9 @@ public class Train implements Cloneable {
 
     public int calcGeneralWeight() {
         int generalWeight = 0;
+
         for (Carriage carriage : carriages) {
-            generalWeight += carriage.carWeight;
+            generalWeight += carriage.getCarWeight();
         }
         return generalWeight;
     }

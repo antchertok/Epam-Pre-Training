@@ -10,12 +10,9 @@ public class HeaviestTrainDetector {
     public static int whichTrainIsHeaviest(Container<Train> depot) {
         int maxWeight = 0;
         int indexOfHeaviestTrain = -1;
-        Iterator<Train> it = depot.iterator();
 
-        while (it.hasNext()) {
-            Train train = it.next();
-
-            if (train.calcGeneralWeight() > maxWeight) {
+        for (Train train : depot) {
+            if (maxWeight < train.calcGeneralWeight()) {
                 maxWeight = train.calcGeneralWeight();
                 indexOfHeaviestTrain = train.getTrainNumber();
             }

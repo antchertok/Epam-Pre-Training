@@ -4,14 +4,10 @@ public class Coach extends Carriage {
     private static int MAX_WEIGHT_OF_CARGO_ON_COACH = 5;
 
     Coach(int cargoWeight) {
-        carWeight = DEFAULT_WEIGHT_OF_EMPTY_CAR + cargoWeight;//Exception?
+        if(cargoWeight > MAX_WEIGHT_OF_CARGO_ON_COACH){
+            carWeight = DEFAULT_WEIGHT_OF_EMPTY_CAR + MAX_WEIGHT_OF_CARGO_ON_COACH;
+        } else {
+            carWeight = DEFAULT_WEIGHT_OF_EMPTY_CAR + cargoWeight;
+        }
     }
-
-//    public void loadCarriage(int cargoWeight)
-//            throws IllegalWeightOfCargoException {
-//        if (cargoWeight > MAX_WEIGHT_OF_CARGO_ON_COACH || cargoWeight < 0) {
-//            throw new IllegalWeightOfCargoException();
-//        }
-//        carWeight = DEFAULT_WEIGHT_OF_EMPTY_CAR + cargoWeight;
-//    }
 }
