@@ -14,6 +14,11 @@ public class EqualityIndicator {
     }
 
     public static boolean findEqualityIterative(int number, int possibleSum) {
-        return DigitsCalc.calcSumOfDigitsIterative(number) == possibleSum;
+        while (number >= 10) {
+            possibleSum -= (number % 10);
+            number /= 10;
+        }
+
+        return number == possibleSum;
     }
 }
