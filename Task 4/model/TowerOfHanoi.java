@@ -14,13 +14,9 @@ public class TowerOfHanoi {
     public static StringBuilder solvePuzzle(int height, char src, char destination, char temp) {
         StringBuilder step = new StringBuilder();
 
-        if (height > 1) {
+        if (height > 0) {
             step.append(solvePuzzle(height - 1, src, temp, destination));
-        }
-
-        step.append(src + " --> " + destination + "\n");
-
-        if (height > 1) {
+            step.append(src + " --> " + destination + "\n");
             step.append(solvePuzzle(height - 1, temp, destination, src));
         }
 
