@@ -74,8 +74,8 @@ public class Train implements Cloneable {
         return trainNumber;
     }
 
-    public int calcGeneralWeight() {
-        int generalWeight = 0;
+    public double calcGeneralWeight() {
+        double generalWeight = 0;
 
         for (Carriage carriage : carriages) {
             generalWeight += carriage.getCarWeight();
@@ -104,8 +104,8 @@ public class Train implements Cloneable {
 
     @Override
     public int hashCode() {
-        return 43 * trainNumber + destination.hashCode()
-                + loco.hashCode() + type.hashCode() + carriages.hashCode();
+        return 43 * trainNumber + 31 * destination.hashCode()
+                + 11 * loco.hashCode() + 7 * type.hashCode() + 13 * carriages.hashCode();
     }
 }
 

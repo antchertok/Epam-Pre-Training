@@ -8,7 +8,7 @@ import java.util.Iterator;
 public class HeaviestTrainDetector {
 
     public static int whichTrainIsHeaviest(Container<Train> depot) {
-        int maxWeight = 0;
+        double maxWeight = 0;
         int indexOfHeaviestTrain = -1;
 
         for (Train train : depot) {

@@ -4,7 +4,7 @@ import by.epam.pretraining.chertok.tasks.task5.model.entity.TrainType;
 
 public abstract class Carriage {
     public static int DEFAULT_WEIGHT_OF_EMPTY_CAR = 60;
-    protected int carWeight;
+    protected double carWeight;
 
     public static Carriage getCarriage(TrainType type, int cargoWeight)
             throws NoSuchTypeOfCarriageException {
@@ -18,7 +18,7 @@ public abstract class Carriage {
         }
     }
 
-    public int getCarWeight() {
+    public double getCarWeight() {
         return carWeight;
     }
 

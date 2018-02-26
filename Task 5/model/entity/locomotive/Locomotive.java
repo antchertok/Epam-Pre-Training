@@ -3,11 +3,11 @@ package by.epam.pretraining.chertok.tasks.task5.model.entity.locomotive;
 import by.epam.pretraining.chertok.tasks.task5.model.entity.carriage.Carriage;
 
 public class Locomotive implements Cloneable {
-    private static final int TRACTION_ELECTRIC = 5000;
-    private static final int TRACTION_DIESEL = 2500;
-    private static final int TRACTION_STEAM = 500;
+    private static final double TRACTION_ELECTRIC = 5000;
+    private static final double TRACTION_DIESEL = 2500;
+    private static final double TRACTION_STEAM = 500;
     private LocomotiveType locomotiveType;
-    private int tractionTons;
+    private double tractionTons;
 
 
     public LocomotiveType getLocomotiveType() {
@@ -38,7 +38,7 @@ public class Locomotive implements Cloneable {
         return (Locomotive) super.clone();
     }
 
-    private Locomotive(LocomotiveType locomotiveType, int tractionTons){
+    private Locomotive(LocomotiveType locomotiveType, double tractionTons){
         this.locomotiveType = locomotiveType;
         this.tractionTons = tractionTons;
     }
