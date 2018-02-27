@@ -16,7 +16,7 @@ public class Locomotive implements Cloneable {
 
     public static Locomotive getLocomotive(int length)
             throws NoSuchTypeOfLocomotiveException {
-        int generalWeight = length * Carriage.DEFAULT_WEIGHT_OF_EMPTY_CAR;
+        double generalWeight = length * Carriage.DEFAULT_WEIGHT_OF_EMPTY_CAR;
 
         if (generalWeight > TRACTION_ELECTRIC) {
             throw new NoSuchTypeOfLocomotiveException();

@@ -65,7 +65,7 @@ public class ContainerImp<T> implements Container<T> {
 
     public T get(int index) {
         if (index >= array.length) {
-            return null;
+            return null; //Обязательно ли здесь бросать проверяемое исключение?
         }
         return (T) array[index];
     }
@@ -140,30 +140,19 @@ public class ContainerImp<T> implements Container<T> {
 
     private void expand() {
         Object[] tempArray = new Object[array.length];
-
-        for (int i = 0; i < array.length; i++) {
-            tempArray[i] = array[i];
-        }
+        System.arraycopy(array, 0, tempArray,0, array.length);
 
         array = new Object[tempArray.length * 2];
-
-        for (int i = 0; i < tempArray.length; i++) {
-            array[i] = tempArray[i];
-        }
+        System.arraycopy(tempArray, 0, array,0, tempArray.length);
     }
 
     private void expand(int amountOfElements) {
         Object[] tempArray = new Object[array.length];
-
-        for (int i = 0; i < array.length; i++) {
-            tempArray[i] = array[i];
-        }
+        System.arraycopy(array, 0, tempArray,0, array.length);
 
         array = new Object[tempArray.length + amountOfElements];
+        System.arraycopy(tempArray, 0, array,0, tempArray.length);
 
-        for (int i = 0; i < tempArray.length; i++) {
-            array[i] = tempArray[i];
-        }
     }
 
 }

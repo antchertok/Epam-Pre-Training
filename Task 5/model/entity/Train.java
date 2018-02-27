@@ -1,7 +1,7 @@
 package by.epam.pretraining.chertok.tasks.task5.model.entity;
 
+import by.epam.pretraining.chertok.tasks.task5.model.entity.carriage.CarMaker;
 import by.epam.pretraining.chertok.tasks.task5.model.entity.carriage.Carriage;
-import by.epam.pretraining.chertok.tasks.task5.model.entity.carriage.NoSuchTypeOfCarriageException;
 import by.epam.pretraining.chertok.tasks.task5.model.entity.locomotive.Locomotive;
 import by.epam.pretraining.chertok.tasks.task5.model.entity.locomotive.LocomotiveType;
 import by.epam.pretraining.chertok.tasks.task5.model.entity.locomotive.NoSuchTypeOfLocomotiveException;
@@ -27,9 +27,9 @@ public class Train implements Cloneable {
             carriages = new ContainerImp<>();
 
             for (int length = 0; length < lengthOfCarriages; length++) {
-                carriages.add(Carriage.getCarriage(this.type, 0));
+                carriages.add(CarMaker.CAR_MAKER.makeCarriage(this.type));
             }
-        } catch (NoSuchTypeOfCarriageException | NoSuchTypeOfLocomotiveException e) {
+        } catch (NoSuchTypeOfLocomotiveException e) {
             e.printStackTrace();
         }
 
@@ -47,9 +47,9 @@ public class Train implements Cloneable {
             this.carriages = new ContainerImp<>();
 
             for (int length = 0; length < lengthOfCarriage; length++) {
-                this.carriages.add(Carriage.getCarriage(this.type, 0));
+                this.carriages.add(CarMaker.CAR_MAKER.makeCarriage(this.type));
             }
-        } catch (CloneNotSupportedException | NoSuchTypeOfCarriageException e) {
+        } catch (CloneNotSupportedException e) {
             e.printStackTrace();
         }
     }
