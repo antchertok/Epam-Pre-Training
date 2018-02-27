@@ -1,6 +1,6 @@
 package sixth.model;
 
-public abstract class AbstractDataType<T> implements AbstractData {
+public abstract class AbstractDataType<T> implements IAbstractDataType {
     private static final int DEFAULT_CAPACITY = 10;
     protected Object[] array;
     protected int numberOfElements = 0;
