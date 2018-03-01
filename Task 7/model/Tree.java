@@ -48,7 +48,7 @@ public class Tree<T extends Comparable> {
         return (T) findLeft(root).data;
     }
 
-//    Переделаю в ближайшее время
+//    Переделаю это и findElement в ближайшее время
     public void remove(T element) throws NoSuchElementException {
         if (root == null) {
             throw new NoSuchElementException();
@@ -128,14 +128,20 @@ public class Tree<T extends Comparable> {
     private TreeNode findElement(TreeNode node, T element) {
         TreeNode required = null;
 
-        while (node != null) {
-            if (comparator.compare(element, (T) node.data) < 0) {
-                node = node.left;
-            } else if (comparator.compare(element, (T) node.data) > 0) {
-                node = node.right;
+        if (comparator.compare(element, (T)node.data) < 0) {
+            if (node.left == null) {
+                required = null;
             } else {
-                required = node;
+                required = findElement(node.left, element);
             }
+        } else if (comparator.compare(element, (T)node.data) > 0) {
+            if (node.right == null) {
+                required = null;
+            } else {
+                required = findElement(node.right, element);
+            }
+        } else {
+            required = node;
         }
 
         return required;
