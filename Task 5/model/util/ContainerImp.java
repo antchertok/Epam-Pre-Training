@@ -65,8 +65,7 @@ public class ContainerImp<T> implements Container<T> {
 
     public T get(int index) {
         if (index >= array.length) {
-            return null; //Обязательно ли здесь бросать проверяемое исключение? 
-                         //Может, можно обойтись непроверяемым как в стандартных коллекциях чтобы избежать лишних try-catch?
+            return null; //Обязательно ли здесь бросать проверяемое исключение?
         }
         return (T) array[index];
     }

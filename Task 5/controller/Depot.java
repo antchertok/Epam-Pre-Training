@@ -1,17 +1,17 @@
 package by.epam.pretraining.chertok.tasks.task5.controller;
 
-import by.epam.pretraining.chertok.tasks.task5.model.DepotMaker;
 import by.epam.pretraining.chertok.tasks.task5.model.entity.Train;
 import by.epam.pretraining.chertok.tasks.task5.model.logic.HeaviestTrainDetector;
 import by.epam.pretraining.chertok.tasks.task5.model.logic.LongestTrainDetector;
 import by.epam.pretraining.chertok.tasks.task5.model.logic.TrainFinder;
 import by.epam.pretraining.chertok.tasks.task5.model.util.Container;
 import by.epam.pretraining.chertok.tasks.task5.view.View;
+import static by.epam.pretraining.chertok.tasks.task5.model.DepotMaker.DEPOT_MAKER;
 
 public class Depot {
 
     public static void main(String[] args) {
-        Container<Train> depot = DepotMaker.DEPOT_MAKER.makeDepot(50, 2, 70);
+        Container<Train> depot = DEPOT_MAKER.makeDepot(50, 2, 70);
 
         Train train = new Train((Train) depot.get(0));
         View.print(train);

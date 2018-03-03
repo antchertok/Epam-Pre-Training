@@ -1,6 +1,7 @@
 package by.epam.pretraining.chertok.tasks.task5.model.entity.carriage.freightCar;
 
 import by.epam.pretraining.chertok.tasks.task5.model.entity.carriage.Carriage;
+import by.epam.pretraining.chertok.tasks.task5.model.exception.FreightCarIsOverloadedException;
 
 public class FreightCar extends Carriage {
     private static final int MAX_WEIGHT_OF_CARGO_TONS = 40;
@@ -26,7 +27,7 @@ public class FreightCar extends Carriage {
         return dangerousLevel;
     }
 
-    public void setWeight(int cargoWeight) throws FreightCarIsOverloadedException{
+    public void setWeight(int cargoWeight) throws FreightCarIsOverloadedException {
         if(cargoWeight > MAX_WEIGHT_OF_CARGO_TONS){
             throw new FreightCarIsOverloadedException();
         }

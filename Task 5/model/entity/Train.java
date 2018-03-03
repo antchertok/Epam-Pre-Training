@@ -7,6 +7,7 @@ import by.epam.pretraining.chertok.tasks.task5.model.entity.locomotive.Locomotiv
 import by.epam.pretraining.chertok.tasks.task5.model.entity.locomotive.NoSuchTypeOfLocomotiveException;
 import by.epam.pretraining.chertok.tasks.task5.model.util.Container;
 import by.epam.pretraining.chertok.tasks.task5.model.util.ContainerImp;
+import static by.epam.pretraining.chertok.tasks.task5.model.entity.locomotive.LocomotiveMaker.LOCOMOTIVE_MAKER;
 
 import java.util.Objects;
 
@@ -23,7 +24,7 @@ public class Train implements Cloneable {
         this.type = TrainType.valueOf(type.toUpperCase());
 
         try {
-            this.loco = Locomotive.getLocomotive(lengthOfCarriages);
+            this.loco = LOCOMOTIVE_MAKER.getLocomotive(lengthOfCarriages);
             carriages = new ContainerImp<>();
 
             for (int length = 0; length < lengthOfCarriages; length++) {
@@ -107,5 +108,7 @@ public class Train implements Cloneable {
         return 43 * trainNumber + 31 * destination.hashCode()
                 + 11 * loco.hashCode() + 7 * type.hashCode() + 13 * carriages.hashCode();
     }
+
+
 }
 

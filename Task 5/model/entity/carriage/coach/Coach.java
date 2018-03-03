@@ -1,6 +1,7 @@
 package by.epam.pretraining.chertok.tasks.task5.model.entity.carriage.coach;
 
 import by.epam.pretraining.chertok.tasks.task5.model.entity.carriage.Carriage;
+import by.epam.pretraining.chertok.tasks.task5.model.exception.UnloadingException;
 
 public class Coach extends Carriage {
     private int passengers;
