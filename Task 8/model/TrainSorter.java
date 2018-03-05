@@ -119,14 +119,4 @@ public enum TrainSorter {
 
         return result;
     }
-
-    public static void main(String[] args) {
-//        Integer[] sorted = SORTER.startQuickSort(new Integer[]{3,2,1,0,-1,9,8,7,6,5,7,4});
-//        System.out.println(Arrays.toString(sorted));
-//        System.out.println(Arrays.toString(SORTER.uniteSortedArrays(new Integer[]{2, 3}, new Integer[]{0, 1})));
-        int[] a = {5, 5};
-        int b = 1;
-        a[b] = b = 0;
-        System.out.println(Arrays.toString(a));
-    }
 }
