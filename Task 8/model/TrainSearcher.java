@@ -1,22 +1,24 @@
-package by.epam.pretraining.chertok.tasks.task8.model;
+package by.epam.pretraining.chertok.tasks.task8.model.integerWorkers;
+
+import by.epam.pretraining.chertok.tasks.task5.model.entity.Train;
 
 import java.util.Arrays;
 
 public enum TrainSearcher {
     SEARCHER;
 
-    public boolean containsLinear(Integer element, Integer... elements) {
+    public boolean containsLinear(Train element, Train... elements) {
         return element.equals(elements[0]) || containsLinearRecursion(element, 1, elements);
     }
 
-    public boolean containsLinearRecursion(Integer element, int startPos, Integer... elements) {
+    public boolean containsLinearRecursion(Train element, int startPos, Train... elements) {
         return startPos == elements.length - 1 || element.equals(elements[startPos])
                 ? element.equals(elements[startPos])
                 : containsLinearRecursion(element, ++startPos, elements);
     }
 
-    public boolean containsLinearIterate(Integer element, Integer... elements) {
-        for (Integer el : elements) {
+    public boolean containsLinearIterate(Train element, Train... elements) {
+        for (Train el : elements) {
             if (element.equals(el)) {
                 return true;
             }
@@ -24,7 +26,7 @@ public enum TrainSearcher {
         return false;
     }
 
-    public boolean containsBinary(Integer element, Integer[] sorted) {
+    public boolean containsBinary(Train element, Train[] sorted) {
         int central = sorted.length / 2;
         if (sorted.length == 1) {
             return element.equals(sorted[central]);
@@ -36,19 +38,19 @@ public enum TrainSearcher {
         }
     }
 
-    public boolean containsBinaryIterate(Integer element, Integer[] sorted) {
+    public boolean containsBinaryIterate(Train element, Train[] sorted) {
         int range = sorted.length;
         int central = range / 2;
 
         while (central > 0 && !element.equals(sorted[central])) {
             if (element.compareTo(sorted[central]) < 0) {
                 central = (range /= 2) / 2;
-                Integer[] temp = new Integer[range];
+                Train[] temp = new Train[range];
                 System.arraycopy(sorted, 0, temp, 0, range);
                 sorted = temp;
             } else {
                 range = range % 2 == 0 ? range / 2 : range / 2 + 1;
-                Integer[] temp = new Integer[range];
+                Train[] temp = new Train[range];
                 System.arraycopy(sorted, central, temp, 0, range);
                 central = range / 2;
                 sorted = temp;
