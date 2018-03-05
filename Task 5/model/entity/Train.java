@@ -11,7 +11,7 @@ import static by.epam.pretraining.chertok.tasks.task5.model.entity.locomotive.Lo
 
 import java.util.Objects;
 
-public class Train implements Cloneable {
+public class Train implements Cloneable, Comparable {
     private int trainNumber;
     private String destination;
     private Locomotive loco;
@@ -109,6 +109,9 @@ public class Train implements Cloneable {
                 + 11 * loco.hashCode() + 7 * type.hashCode() + 13 * carriages.hashCode();
     }
 
-
+    @Override
+    public int compareTo(Object o) {
+        return carriages.size()-((Train)o).carriages.size();
+    }
 }
 
