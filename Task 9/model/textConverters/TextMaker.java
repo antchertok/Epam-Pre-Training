@@ -7,6 +7,7 @@ public enum TextMaker {
 
     public String makeString(List<String> words) {
         StringBuilder stringBuilder = new StringBuilder();
+
         for (String word : words) {
             if (!word.equals("")) {
                 stringBuilder.append(word);

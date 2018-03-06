@@ -1,5 +1,6 @@
 package by.epam.pretraining.chertok.tasks.task9.model.textConverters;
 
+import by.epam.pretraining.chertok.tasks.task9.model.exceptions.FileNotOpenedException;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -11,6 +12,7 @@ public enum  TextReader {
             StringBuilder sb = new StringBuilder();
             FileReader inputStream = new FileReader(path);
             int symbol;
+
             while ((symbol = inputStream.read()) != -1) {
                 sb.append((char) symbol);
             }
