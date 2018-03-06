@@ -1,4 +1,4 @@
-package sixth.view;
+package by.epam.pretraining.chertok.tasks.task6.view;
 
 public class View {
 
