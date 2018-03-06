@@ -1,6 +1,6 @@
-package sixth.model.queue;
+package by.epam.pretraining.chertok.tasks.task6.model.queue;
 
-import sixth.model.ContainerIsFullException;
+import by.epam.pretraining.chertok.tasks.task6.model.ContainerIsFullException;
 
 public class StaticQueue<T> extends Queue<T> {
 

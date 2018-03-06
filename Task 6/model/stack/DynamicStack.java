@@ -1,4 +1,4 @@
-package sixth.model.stack;
+package by.epam.pretraining.chertok.tasks.task6.model.stack;
 
 public class DynamicStack<T> extends Stack<T> {
     public void push(T element) {

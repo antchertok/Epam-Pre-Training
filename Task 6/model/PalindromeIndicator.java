@@ -1,7 +1,7 @@
-package sixth.model;
+package by.epam.pretraining.chertok.tasks.task6.model;
 
-import sixth.model.stack.DynamicStack;
-import sixth.model.stack.Stack;
+import by.epam.pretraining.chertok.tasks.task6.model.stack.DynamicStack;
+import by.epam.pretraining.chertok.tasks.task6.model.stack.Stack;
 
 public class PalindromeIndicator {
 

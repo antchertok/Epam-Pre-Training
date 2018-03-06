@@ -1,8 +1,8 @@
-package sixth.model.stack;
+package by.epam.pretraining.chertok.tasks.task6.model.stack;
 
-import sixth.model.AbstractDataType;
-import sixth.model.ContainerIsEmptyException;
-import sixth.model.ContainerIsFullException;
+import by.epam.pretraining.chertok.tasks.task6.model.AbstractDataType;
+import by.epam.pretraining.chertok.tasks.task6.model.ContainerIsEmptyException;
+import by.epam.pretraining.chertok.tasks.task6.model.ContainerIsFullException;
 
 public abstract class Stack<T> extends AbstractDataType {
 

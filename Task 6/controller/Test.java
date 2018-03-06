@@ -1,10 +1,10 @@
-package sixth.controller;
+package by.epam.pretraining.chertok.tasks.task6.controller;
 
-import sixth.model.PalindromeIndicator;
+import by.epam.pretraining.chertok.tasks.task6.model.PalindromeIndicator;
 
 public class Test {
 
     public static void main(String[] args) {
-        View.print(PalindromeIndicator.indicatePalindrome("BadaB"));
+        System.out.println(PalindromeIndicator.indicatePalindrome("BadaB"));
     }
 }

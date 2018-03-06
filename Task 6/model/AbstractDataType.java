@@ -1,6 +1,6 @@
-package sixth.model;
+package by.epam.pretraining.chertok.tasks.task6.model;
 
-public abstract class AbstractDataType<T> implements IAbstractDataType {
+public abstract class AbstractDataType<T> implements AbstractData {
     private static final int DEFAULT_CAPACITY = 10;
     protected Object[] array;
     protected int numberOfElements = 0;

@@ -1,4 +1,4 @@
-package sixth.model.queue;
+package by.epam.pretraining.chertok.tasks.task6.model.queue;
 
 public class DynamicQueue<T> extends Queue<T> {
 

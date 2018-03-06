@@ -1,6 +1,6 @@
-package sixth.model.stack;
+package by.epam.pretraining.chertok.tasks.task6.model.stack;
 
-import sixth.model.ContainerIsFullException;
+import by.epam.pretraining.chertok.tasks.task6.model.ContainerIsFullException;
 
 public class StaticStack<T> extends Stack<T> {
 

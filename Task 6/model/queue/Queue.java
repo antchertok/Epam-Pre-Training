@@ -1,8 +1,8 @@
-package sixth.model.queue;
+package by.epam.pretraining.chertok.tasks.task6.model.queue;
 
-import sixth.model.AbstractDataType;
-import sixth.model.ContainerIsEmptyException;
-import sixth.model.ContainerIsFullException;
+import by.epam.pretraining.chertok.tasks.task6.model.AbstractDataType;
+import by.epam.pretraining.chertok.tasks.task6.model.ContainerIsEmptyException;
+import by.epam.pretraining.chertok.tasks.task6.model.ContainerIsFullException;
 
 public abstract class Queue<T> extends AbstractDataType<T> {
     public abstract void enequeue(T element) throws ContainerIsFullException;

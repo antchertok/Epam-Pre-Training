@@ -1,4 +1,4 @@
-package sixth.model;
+package by.epam.pretraining.chertok.tasks.task6.model;
 
 public class ContainerIsFullException extends Exception {
 
