@@ -1,14 +1,12 @@
 package by.epam.pretraining.chertok.tasks.task8.model.integerWorkers;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
-
 public enum Sorter {
     SORTER;
 
     public int[] bubbleSort(int[] unsorted) {
         for (int i = 0; i < unsorted.length - 1; i++) {
             boolean isSorted = true;
+
             for (int j = 0; j < unsorted.length - 1 - i; j++) {
                 if (unsorted[j] > (unsorted[j + 1])) {
                     int temp = unsorted[j + 1];
@@ -29,6 +27,7 @@ public enum Sorter {
 
             int transfer = unsorted[i];
             int j = i;
+
             while (j > 0 && transfer < (unsorted[j - 1])) {
                 unsorted[j] = unsorted[j - 1];
                 j--;
@@ -42,6 +41,7 @@ public enum Sorter {
         for (int i = 0; i < unsorted.length - 1; i++) {
             int min = unsorted[i];
             int indexMin = i;
+
             for (int j = i + 1; j < unsorted.length; j++) {
                 if (min > (unsorted[j])) {
                     min = unsorted[j];
