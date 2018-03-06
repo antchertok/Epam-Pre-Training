@@ -28,14 +28,13 @@ public enum TrainSearcher {
 
     public boolean containsBinary(Train element, Train[] sorted) {
         int central = sorted.length / 2;
+
         if (sorted.length == 1) {
             return element.equals(sorted[central]);
         }
-        if (element.compareTo(sorted[central]) < 0) {
-            return containsBinary(element, Arrays.copyOfRange(sorted, 0, central));
-        } else {
-            return containsBinary(element, Arrays.copyOfRange(sorted, central, sorted.length));
-        }
+        return element.compareTo(sorted[central]) < 0
+                ? containsBinary(element, Arrays.copyOfRange(sorted, 0, central))
+                : containsBinary(element, Arrays.copyOfRange(sorted, central, sorted.length));
     }
 
     public boolean containsBinaryIterate(Train element, Train[] sorted) {

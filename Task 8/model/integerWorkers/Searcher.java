@@ -10,11 +10,9 @@ public enum Searcher {
         if (sorted.length == 1) {
             return element == sorted[central];
         }
-        if (element < sorted[central]) {
-            return containsBinary(element, Arrays.copyOfRange(sorted, 0, central));
-        } else {
-            return containsBinary(element, Arrays.copyOfRange(sorted, central, sorted.length));
-        }
+        return element < sorted[central]
+                ? containsBinary(element, Arrays.copyOfRange(sorted, 0, central))
+                : containsBinary(element, Arrays.copyOfRange(sorted, central, sorted.length));
     }
 
     public boolean containsBinaryIterate(int element, int[] sorted) {

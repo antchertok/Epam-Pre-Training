@@ -12,11 +12,12 @@ public class Test {
     public static void main(String[] args) {
         int[] a = {0,9,8,7,6,5,4,3,2,1};
 
-        View.print(Arrays.toString(SORTER.bubbleSort(a)));
-        View.print(Arrays.toString(SORTER.insertionSort(a)));
-        View.print(Arrays.toString(SORTER.selectioSort(a)));
-        View.print(Arrays.toString(SORTER.mergeSort(a)));
-        View.print(Arrays.toString(SORTER.quickSort(a)));
+//        View.print(Arrays.toString(SORTER.bubbleSort(a)));
+//        View.print(Arrays.toString(SORTER.insertionSort(a)));
+//        View.print(Arrays.toString(SORTER.selectioSort(a)));
+//        View.print(Arrays.toString(SORTER.mergeSort(a)));
+//        View.print(Arrays.toString(SORTER.quickSort(a)));
+        View.print(Arrays.toString(a));
 
         View.print(SEARCHER.containsBinary(1,a));
         View.print(SEARCHER.containsBinaryIterate(1,a));

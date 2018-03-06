@@ -10,6 +10,7 @@ public enum TrainSorter {
     public Train[] bubbleSort(Train[] unsorted) {
         for (int i = 0; i < unsorted.length - 1; i++) {
             boolean isSorted = true;
+
             for (int j = 0; j < unsorted.length - 1 - i; j++) {
                 if (unsorted[j].compareTo(unsorted[j + 1]) > 0) {
                     Train temp = unsorted[j + 1];
@@ -30,6 +31,7 @@ public enum TrainSorter {
 
             Train transfer = unsorted[i];
             int j = i;
+
             while (j > 0 && transfer.compareTo(unsorted[j - 1]) < 0) {
                 unsorted[j] = unsorted[j - 1];
                 j--;
@@ -43,6 +45,7 @@ public enum TrainSorter {
         for (int i = 0; i < unsorted.length - 1; i++) {
             Train min = unsorted[i];
             int indexMin = i;
+
             for (int j = i + 1; j < unsorted.length; j++) {
                 if (min.compareTo(unsorted[j]) > 0) {
                     min = unsorted[j];
@@ -83,6 +86,7 @@ public enum TrainSorter {
     private Train[] quickSort(Train[] unsorted, int left, int right) {
         int pivot = (left + right) / 2;
         int i = left, j = right;
+
         while (unsorted[i].compareTo(unsorted[pivot]) < 0 && i < j) {
             i++;
         }
@@ -103,6 +107,7 @@ public enum TrainSorter {
     private Train[] uniteSortedArrays(Train[] first, Train[] second) {
         Train[] result = new Train[first.length + second.length];
         int i = 0, j = 0;
+
         while (i < first.length && j < second.length) {
             if (first[i].compareTo(second[j]) < 0) {
                 result[i + j] = first[i++];
@@ -118,15 +123,5 @@ public enum TrainSorter {
         }
 
         return result;
-    }
-
-    public static void main(String[] args) {
-//        Integer[] sorted = SORTER.startQuickSort(new Integer[]{3,2,1,0,-1,9,8,7,6,5,7,4});
-//        System.out.println(Arrays.toString(sorted));
-//        System.out.println(Arrays.toString(SORTER.uniteSortedArrays(new Integer[]{2, 3}, new Integer[]{0, 1})));
-        int[] a = {5, 5};
-        int b = 1;
-        a[b] = b = 0;
-        System.out.println(Arrays.toString(a));
     }
 }
