@@ -20,7 +20,6 @@ public class Test {
         View.print(tree.contains(removing));
         View.print(tree.getSize());
 
-//        Исправлю в ближайшее время
         try {
             tree.remove(removing);
         } catch (NoSuchElementException e) {
