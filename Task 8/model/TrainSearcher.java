@@ -5,7 +5,7 @@ import by.epam.pretraining.chertok.tasks.task5.model.entity.Train;
 import java.util.Arrays;
 
 public enum TrainSearcher {
-    SEARCHER;
+    TRAIN_SEARCHER;
 
     public boolean containsLinear(Train element, Train... elements) {
         return element.equals(elements[0]) || containsLinearRecursion(element, 1, elements);

@@ -5,7 +5,7 @@ import by.epam.pretraining.chertok.tasks.task5.model.entity.Train;
 import java.util.Arrays;
 
 public enum TrainSorter {
-    SORTER;
+    TRAIN_SORTER;
 
     public Train[] bubbleSort(Train[] unsorted) {
         for (int i = 0; i < unsorted.length - 1; i++) {
@@ -76,17 +76,17 @@ public enum TrainSorter {
         return result;
     }
 
-    public Train[] startQuickSort(Train[] unsorted){
-        return quickSort(unsorted,0,unsorted.length-1);
+    public Train[] startQuickSort(Train[] unsorted) {
+        return quickSort(unsorted, 0, unsorted.length - 1);
     }
 
     private Train[] quickSort(Train[] unsorted, int left, int right) {
-        int pivot = (left+right) / 2;
+        int pivot = (left + right) / 2;
         int i = left, j = right;
-        while(unsorted[i].compareTo(unsorted[pivot]) < 0 && i < j){
+        while (unsorted[i].compareTo(unsorted[pivot]) < 0 && i < j) {
             i++;
         }
-        while(unsorted[j].compareTo(unsorted[pivot]) > 0 && j > pivot){
+        while (unsorted[j].compareTo(unsorted[pivot]) > 0 && j > pivot) {
             j--;
         }
 
@@ -94,8 +94,8 @@ public enum TrainSorter {
         unsorted[i] = unsorted[j];
         unsorted[j] = temp;
 
-        if(i + 1 < right)unsorted = quickSort(unsorted,i+1,right);
-        if(j - 1 > left)unsorted = quickSort(unsorted,left,j-1);
+        if (i + 1 < right) unsorted = quickSort(unsorted, i + 1, right);
+        if (j - 1 > left) unsorted = quickSort(unsorted, left, j - 1);
         return unsorted;
 
     }
