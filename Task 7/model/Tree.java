@@ -47,7 +47,6 @@ public class Tree<T extends Comparable> {
         return (T) findLeft(root).data;
     }
 
-    //    Переделаю это и findElement в ближайшее время
     public void remove(T element) throws NoSuchElementException {
         //parent == null?(first element)
         if (root == null) {
