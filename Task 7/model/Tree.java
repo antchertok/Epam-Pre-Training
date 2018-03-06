@@ -1,10 +1,9 @@
 package by.epam.pretraining.chertok.tasks.task7.model;
 
-import java.util.Comparator;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class Tree<T extends Comparable> {
+    private ArrayList arrayList = new ArrayList();
     private TreeNode root;
     private int size;
     Comparator<T> comparator;
@@ -12,8 +11,8 @@ public class Tree<T extends Comparable> {
     public Tree() {
         comparator = new Comparator<T>() {
             @Override
-            public int compare(T obj1, T obj2) {
-                return obj1.compareTo(obj2);
+            public int compare(T o1, T o2) {
+                return o1.compareTo(o2);
             }
         };
     }
@@ -22,7 +21,7 @@ public class Tree<T extends Comparable> {
         this.comparator = comparator;
     }
 
-    public int size() {
+    public int getSize() {
         return size;
     }
 
@@ -50,6 +49,7 @@ public class Tree<T extends Comparable> {
 
     //    Переделаю это и findElement в ближайшее время
     public void remove(T element) throws NoSuchElementException {
+        //parent == null?(first element)
         if (root == null) {
             throw new NoSuchElementException();
         }
@@ -126,7 +126,7 @@ public class Tree<T extends Comparable> {
     }
 
     private TreeNode findElement(TreeNode node, T element) {
-        TreeNode required = null;
+        TreeNode required;
 
         if (comparator.compare(element, (T) node.data) < 0) {
             if (node.left == null) {
@@ -179,3 +179,5 @@ public class Tree<T extends Comparable> {
     }
 
 }
+
+

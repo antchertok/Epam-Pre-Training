@@ -12,13 +12,13 @@ public class Test {
 
         double removing = 0.3141593;
 
-        View.print(tree.size());
+        View.print(tree.getSize());
         View.print(tree.first());
         tree.add(removing);
         View.print(tree.getAll());
 
         View.print(tree.contains(removing));
-        View.print(tree.size());
+        View.print(tree.getSize());
 
 //        Исправлю в ближайшее время
         try {
@@ -27,7 +27,7 @@ public class Test {
             e.printStackTrace();
         }
 
-        View.print(tree.size());
+        View.print(tree.getSize());
         View.print(removing);
         View.print(tree.contains(removing));
         View.print(tree.getAll());
