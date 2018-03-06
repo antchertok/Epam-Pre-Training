@@ -1,4 +1,4 @@
-package by.epam.pretraining.chertok.tasks.task8.model.integerWorkers;
+package by.epam.pretraining.chertok.tasks.task8.model;
 
 import by.epam.pretraining.chertok.tasks.task5.model.entity.Train;
 

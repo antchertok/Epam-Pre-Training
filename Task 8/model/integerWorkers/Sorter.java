@@ -1,16 +1,17 @@
 package by.epam.pretraining.chertok.tasks.task8.model.integerWorkers;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public enum Sorter {
     SORTER;
 
-    public Integer[] bubbleSort(Integer[] unsorted) {
+    public int[] bubbleSort(int[] unsorted) {
         for (int i = 0; i < unsorted.length - 1; i++) {
             boolean isSorted = true;
             for (int j = 0; j < unsorted.length - 1 - i; j++) {
-                if (unsorted[j].compareTo(unsorted[j + 1]) > 0) {
-                    Integer temp = unsorted[j + 1];
+                if (unsorted[j] > (unsorted[j + 1])) {
+                    int temp = unsorted[j + 1];
                     unsorted[j + 1] = unsorted[j];
                     unsorted[j] = temp;
                     isSorted = false;
@@ -23,12 +24,12 @@ public enum Sorter {
         return unsorted;
     }
 
-    public Integer[] insertionSort(Integer[] unsorted) {
+    public int[] insertionSort(int[] unsorted) {
         for (int i = 1; i < unsorted.length; i++) {
 
-            Integer transfer = unsorted[i];
+            int transfer = unsorted[i];
             int j = i;
-            while (j > 0 && transfer.compareTo(unsorted[j - 1]) < 0) {
+            while (j > 0 && transfer < (unsorted[j - 1])) {
                 unsorted[j] = unsorted[j - 1];
                 j--;
             }
@@ -37,72 +38,72 @@ public enum Sorter {
         return unsorted;
     }
 
-    public Integer[] selectioSort(Integer[] unsorted) {
+    public int[] selectioSort(int[] unsorted) {
         for (int i = 0; i < unsorted.length - 1; i++) {
-            Integer min = unsorted[i];
+            int min = unsorted[i];
             int indexMin = i;
             for (int j = i + 1; j < unsorted.length; j++) {
-                if (min.compareTo(unsorted[j]) > 0) {
+                if (min > (unsorted[j])) {
                     min = unsorted[j];
                     indexMin = j;
                 }
             }
 
-            Integer temp = unsorted[i];
+            int temp = unsorted[i];
             unsorted[i] = min;
             unsorted[indexMin] = temp;
         }
         return unsorted;
     }
 
-    public Integer[] mergeSort(Integer[] unsorted) {
+    public int[] mergeSort(int[] unsorted) {
         if (unsorted.length == 1) {
             return unsorted;
         }
 
         int divider = unsorted.length / 2;
-        Integer[] first = new Integer[divider];
-        Integer[] second = new Integer[unsorted.length - divider];
+        int[] first = new int[divider];
+        int[] second = new int[unsorted.length - divider];
         System.arraycopy(unsorted, 0, first, 0, divider);
         System.arraycopy(unsorted, divider, second, 0, unsorted.length - divider);
 
         first = mergeSort(first);
         second = mergeSort(second);
         int i = 0, j = 0;
-        Integer[] result = uniteSortedArrays(first, second);
+        int[] result = uniteSortedArrays(first, second);
 
         return result;
     }
 
-    public Integer[] startQuickSort(Integer[] unsorted){
-        return quickSort(unsorted,0,unsorted.length-1);
+    public int[] quickSort(int[] unsorted) {
+        return startQuickSort(unsorted, 0, unsorted.length - 1);
     }
 
-    private Integer[] quickSort(Integer[] unsorted, int left, int right) {
-        int pivot = (left+right) / 2;
+    private int[] startQuickSort(int[] unsorted, int left, int right) {
+        int pivot = (left + right) / 2;
         int i = left, j = right;
-        while(unsorted[i].compareTo(unsorted[pivot]) < 0 && i < j){
+        while (unsorted[i] < (unsorted[pivot]) && i < j) {
             i++;
         }
-        while(unsorted[j].compareTo(unsorted[pivot]) > 0 && j > pivot){
+        while (unsorted[j] > (unsorted[pivot]) && j > pivot) {
             j--;
         }
 
-        Integer temp = unsorted[i];
+        int temp = unsorted[i];
         unsorted[i] = unsorted[j];
         unsorted[j] = temp;
 
-        if(i + 1 < right)unsorted = quickSort(unsorted,i+1,right);
-        if(j - 1 > left)unsorted = quickSort(unsorted,left,j-1);
+        if (i + 1 < right) unsorted = startQuickSort(unsorted, i + 1, right);
+        if (j - 1 > left) unsorted = startQuickSort(unsorted, left, j - 1);
         return unsorted;
 
     }
 
-    private Integer[] uniteSortedArrays(Integer[] first, Integer[] second) {
-        Integer[] result = new Integer[first.length + second.length];
+    private int[] uniteSortedArrays(int[] first, int[] second) {
+        int[] result = new int[first.length + second.length];
         int i = 0, j = 0;
         while (i < first.length && j < second.length) {
-            if (first[i].compareTo(second[j]) < 0) {
+            if (first[i] < (second[j])) {
                 result[i + j] = first[i++];
             } else {
                 result[i + j] = second[j++];
