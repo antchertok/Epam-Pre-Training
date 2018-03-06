@@ -1,18 +1,18 @@
 package by.epam.pretraining.chertok.tasks.task6.model;
 
-import by.epam.pretraining.chertok.tasks.task6.model.stack.DynamicStack;
+import by.epam.pretraining.chertok.tasks.task6.model.exceptions.ContainerIsEmptyException;
+import by.epam.pretraining.chertok.tasks.task6.model.stack.ListStack;
 import by.epam.pretraining.chertok.tasks.task6.model.stack.Stack;
 
 public class PalindromeIndicator {
 
     public static boolean indicatePalindrome(String checked) {
-        Stack<Character> letterStorage = new DynamicStack();
+        if (checked.length() < 3) {
+            return false;
+        }
+        Stack<Character> letterStorage = new ListStack();
         for (char letter : checked.toCharArray()) {
-            try {
-                letterStorage.push(letter);
-            } catch (ContainerIsFullException e) {
-                e.printStackTrace();
-            }
+            letterStorage.push(letter);
         }
 
         StringBuilder reversed = new StringBuilder();
@@ -20,9 +20,11 @@ public class PalindromeIndicator {
             try {
                 reversed.append(letterStorage.pop());
             } catch (ContainerIsEmptyException e) {
+//                Exception is impossible
                 e.printStackTrace();
             }
         }
+
         return checked.equals(reversed.toString());
     }
 

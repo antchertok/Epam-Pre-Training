@@ -1,32 +1,11 @@
 package by.epam.pretraining.chertok.tasks.task6.model.queue;
 
 import by.epam.pretraining.chertok.tasks.task6.model.AbstractDataType;
-import by.epam.pretraining.chertok.tasks.task6.model.ContainerIsEmptyException;
-import by.epam.pretraining.chertok.tasks.task6.model.ContainerIsFullException;
+import by.epam.pretraining.chertok.tasks.task6.model.exceptions.ContainerIsEmptyException;
 
-public abstract class Queue<T> extends AbstractDataType<T> {
-    public abstract void enequeue(T element) throws ContainerIsFullException;
+public interface Queue<T> extends AbstractDataType<T> {
 
-    @Override
-    public T peek() throws ContainerIsEmptyException {
-        if (isEmpty()) {
-            throw new ContainerIsEmptyException();
-        }
-        return (T) array[array.length - numberOfElements];
-    }
+    void enequeue(T element);
 
-    public T dequeue() throws ContainerIsEmptyException {
-        if (isEmpty()) {
-            throw new ContainerIsEmptyException();
-        }
-
-        Object dequeued = array[array.length - numberOfElements];
-        array[array.length - numberOfElements--] = null;
-
-        return (T) dequeued;
-    }
-
-    public boolean isFull() {
-        return array[array.length - 1] != null;
-    }
+    T dequeue() throws ContainerIsEmptyException;
 }

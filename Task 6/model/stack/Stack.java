@@ -1,33 +1,11 @@
 package by.epam.pretraining.chertok.tasks.task6.model.stack;
 
 import by.epam.pretraining.chertok.tasks.task6.model.AbstractDataType;
-import by.epam.pretraining.chertok.tasks.task6.model.ContainerIsEmptyException;
-import by.epam.pretraining.chertok.tasks.task6.model.ContainerIsFullException;
+import by.epam.pretraining.chertok.tasks.task6.model.exceptions.ContainerIsEmptyException;
 
-public abstract class Stack<T> extends AbstractDataType {
+public interface Stack<T> extends AbstractDataType<T> {
 
-    public abstract void push(T element) throws ContainerIsFullException;
+    void push(T element);
 
-    @Override
-    public T peek() throws ContainerIsEmptyException {
-        if (numberOfElements == 0) {
-            throw new ContainerIsEmptyException();
-        }
-        return (T) array[numberOfElements - 1];
-    }
-
-    public T pop() throws ContainerIsEmptyException {
-        if (numberOfElements == 0) {
-            throw new ContainerIsEmptyException();
-        }
-
-        Object popped = array[numberOfElements - 1];
-        array[numberOfElements--] = null;
-
-        return (T) popped;
-    }
-
-    public boolean isFull() {
-        return array.length == numberOfElements;
-    }
+    T pop() throws ContainerIsEmptyException;
 }
