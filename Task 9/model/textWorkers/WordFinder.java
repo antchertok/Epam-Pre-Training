@@ -8,13 +8,14 @@ public enum WordFinder {
 
     //#4
     public String findWordsInInterrogativeSentence(String text, int wordLength) {
-        Pattern pattern = Pattern.compile("([a-zA-Z0-9']+[,;]?\\s)+\\S+\\?");
+        Pattern pattern = Pattern.compile("((\\s|^)[a-zA-Z0-9']+[,;]?)+\\?");
         Matcher interrogativeSentence = pattern.matcher(text);
         pattern = Pattern.compile("(\\s|^)\\w{" + wordLength + "}(\\s|[.?!,;])");
 
         StringBuilder words = new StringBuilder();
         while (interrogativeSentence.find()){
             Matcher wordWithGivenLength = pattern.matcher(interrogativeSentence.group());
+//            System.out.println(true);
 
             while (wordWithGivenLength.find()){
                 if(!words.toString().contains(wordWithGivenLength.group())){
