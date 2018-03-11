@@ -15,7 +15,6 @@ public enum WordFinder {
         StringBuilder words = new StringBuilder();
         while (interrogativeSentence.find()){
             Matcher wordWithGivenLength = pattern.matcher(interrogativeSentence.group());
-//            System.out.println(true);
 
             while (wordWithGivenLength.find()){
                 if(!words.toString().contains(wordWithGivenLength.group())){
